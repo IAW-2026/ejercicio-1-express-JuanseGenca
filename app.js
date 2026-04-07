@@ -16,6 +16,23 @@ app.get('/', (req, res) => {
 });
 */
 
+// Rutas adicionales
+
+//pag principal
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+//ruta acerca
+app.get('/acerca', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'acerca.html'));
+});
+
+//ruta contacto
+app.get('/contacto', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'contacto.html'));
+});
+
 // Middleware básico para manejo de errores
 app.use((err, req, res, next) => {
   console.error(err.stack);
